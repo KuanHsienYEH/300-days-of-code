@@ -1,15 +1,15 @@
 function insertionSort(arr) {
-  for (let j = 1; j <= arr.length - 1; j++) {
-    let key = arr[j];
-    i = j - 1;
-    while (i >= 0 && arr[i] > key) {
-      arr[i + 1] = arr[i];
-      i -= 1;
+  for (let i = 1; i < arr.length; i++) {
+    let temp = arr[i];
+    j = i - 1;
+    while (j >= 0 && arr[j] > temp) {
+      arr[j + 1] = arr[j];
+      j--;
     }
-    arr[i + 1] = key;
+    arr[j + 1] = temp;
   }
   console.log(arr);
   return arr;
 }
 
-insertionSort([2, 31, 2, 4, 5, 6, 9]);
+insertionSort([8, 6, 10, 5, 3, 9, 2, 7, 4, 1]);
